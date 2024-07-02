@@ -122,7 +122,7 @@ command:
       CISv8_IG3: true
   {{ end }}
   {{ if .Vars.win2019cis_18_8_22_1_8 }}
-  turn_off_search_companion:
+  turn_off_search_companion2:
     title: 18.8.22.1.8 | L2 |  Ensure 'Turn off Search Companion content file updates' is set to 'Enabled' | reg_check
     exec: {{ .Vars.ps_regcheck }} get-itempropertyValue -path 'HKLM:/SOFTWARE/Policies/Microsoft/SearchCompanion' -Name DisableContentFileUpdates
     exit-status: 0
@@ -139,7 +139,7 @@ command:
       CISv8_IG3: true
   {{ end }}
   {{ if .Vars.win2019cis_18_8_22_1_9 }}
-  turn_off_search_companion:
+  turn_off_search_companion3:
     title: 18.8.22.1.9 | L2 | Ensure 'Turn off the "Order Prints" picture task' is set to 'Enabled' | reg_check
     exec: {{ .Vars.ps_regcheck }} {{ .Vars.HKLM_CV_EXPLORER }} -Name NoOnlinePrintsWizard
     exit-status: 0
