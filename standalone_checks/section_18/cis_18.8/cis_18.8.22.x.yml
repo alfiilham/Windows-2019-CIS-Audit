@@ -1,7 +1,7 @@
 {{ if .Vars.win2019cis_level_1 }}
 command:
   {{ if .Vars.win2019cis_18_8_22_1_1 }}
-  turn_off_web_printer_download:
+  turn_off_web_printer_download2:
     title: 18.8.22.1.1 | L1 | Ensure 'Turn off downloading of print drivers over HTTP' is set to 'Enabled' | reg_check
     exec: {{ .Vars.ps_regcheck }} get-itempropertyValue -path 'HKLM:/SOFTWARE/Policies/Microsoft/Windows NT/Printers' -Name DisableWenPnpDownload 
     exit-status: 0
@@ -18,7 +18,7 @@ command:
       CISv8_IG3: true
   {{ end }}
   {{ if .Vars.win2019cis_18_8_22_1_5 }}
-  turn_off_web_printer_download:
+  turn_off_web_printer_download3:
     title: 18.8.22.1.5 | L1 | Ensure 'Turn off Internet download for Web publishing and online ordering wizards' is set to 'Enabled' | reg_check
     exec: {{ .Vars.ps_regcheck }} {{ .Vars.HKLM_CV_EXPLORER }} -Name NoWebServices
     exit-status: 0
