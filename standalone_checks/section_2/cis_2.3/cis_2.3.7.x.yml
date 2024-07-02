@@ -87,7 +87,7 @@ command:
       CISv8_IG3: true
   {{ end }}
   {{ if .Vars.win2019cis_2_3_7_7 }}
-  password_change_warn:
+  password_change_warn2:
     title: 2.3.7.7 | L1 | Ensure 'Interactive logon - Prompt user to change password before expiration' is set to 'between 5 and 14 days's| reg_check
     exec:  {{ .Vars.ps_regcheck }} {{ .Vars.HKLM_NT_WINLOGON }} -Name PasswordExpiryWarning
     exit-status: 0
@@ -104,7 +104,7 @@ command:
       CISv8_IG3: true
   {{ end }}
   {{ if .Vars.win2019cis_2_3_7_9 }}
-  password_change_warn:
+  password_change_warn3:
     title: 2.3.7.9 | L1 | Ensure 'Interactive logon - Smart card removal behavior' is set to 'Lock Workstation' or highers| reg_check
     exec:  {{ .Vars.ps_regcheck }} {{ .Vars.HKLM_NT_WINLOGON }} -Name ScRemoveOption
     exit-status: 0
